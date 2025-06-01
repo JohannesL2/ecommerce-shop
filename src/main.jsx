@@ -3,8 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
-import { CartProvider } from './context/Cart.jsx'
-import { FavoriteProvider } from './context/Favorites.jsx'
+import { CartProvider } from './context/CartTemp.jsx'
+import { FavoriteProvider } from './context/FavoritesTemp.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
