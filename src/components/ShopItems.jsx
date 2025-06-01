@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { CartContext } from '../context/Cart'
-import { FavoriteContext } from '../context/favorites'
+import { FavoriteContext } from '../context/Favorites'
 import { Dialog, DialogPanel } from '@headlessui/react'
 
 export default function ShopItems() {

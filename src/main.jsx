@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import { CartProvider } from './context/Cart.jsx'
-import { FavoriteProvider } from './context/favorites.jsx'
+import { FavoriteProvider } from './context/Favorites.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
