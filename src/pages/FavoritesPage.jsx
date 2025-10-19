@@ -4,7 +4,7 @@ import FavoriteList from '../components/FavoriteList'
 
 export default function FavoritesPage() {
   return (
-    <div>
+    <div className='flex items-center justify-center'>
       <Header/>
       <FavoriteList/>
     </div>
