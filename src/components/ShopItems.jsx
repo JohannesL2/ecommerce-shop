@@ -8,7 +8,7 @@ export default function ShopItems() {
   const [products, setProducts] = useState([])
   const {cartItems, addToCart} = useContext(CartContext)
 
-  const {addToFavorites} = useContext(FavoriteContext)
+  const { favoriteItems, addToFavorites, removeFromFavorites } = useContext(FavoriteContext)
 
   {/*Modal*/}
   const [isOpen, setIsOpen] = useState(false)
@@ -25,6 +25,7 @@ export default function ShopItems() {
     setIsOpen(true)
   }
 
+  const isFavorite = (product) => favoriteItems.some(item => item.id === product.id)
 
   return (
     <div className='pt-30'>
@@ -36,9 +37,19 @@ export default function ShopItems() {
           />
           <h3>{product.title}</h3>
           <p>${product.price}</p>
-          <div className='flex gap-4 justify-center pt-4'>
-          <button onClick={() => addToCart(product)}>Buy</button>
-          <button onClick={() => addToFavorites(product)}>⭐</button>
+          <div className='relative flex gap-4 justify-center pt-4'>
+          <button onClick={() => addToCart(product)} className='bg-blue-300 hover:bg-blue-400 text-white font-semibold p-4 rounded-2xl cursor-pointer transition'>Add to cart</button>
+          <button onClick={() =>
+            {
+            isFavorite(product) ? removeFromFavorites(product) :
+             addToFavorites(product)}}
+             className={`flex items-center justify-center w-10 h-10 rounded-full shadow-lg transition-transform duration-300
+             ${isFavorite(product)
+              ? 'bg-red-500 text-white scale-110'
+              : 'bg-white text-gray-600 hover:bg-yellow-300 hover:text-white hover:scale-110'
+             }`}>
+              {isFavorite(product) ? '❤️' : '🤍'}
+              </button>
           </div>
           </li>
         ))}
