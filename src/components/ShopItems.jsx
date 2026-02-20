@@ -28,25 +28,23 @@ export default function ShopItems() {
   const isFavorite = (product) => favoriteItems.some(item => item.id === product.id)
 
   return (
-    <div className='pt-30'>
-    <ul className='grid grid-cols-2 gap-4'>
+    <div className='max-w-7xl mx-auto px-4 pt-32 pb-20'>
+    <ul className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-10'>
         {products.map(product => (
           <li key={product.id} className='bg-stone-100 p-4 rounded-lg'>
           <img src={product.image} alt="" className='size-24 object-contain mx-auto'
           onClick={() => openDialog(product)}
           />
           <h3>{product.title}</h3>
-          <p>${product.price}</p>
           <div className='relative flex gap-4 justify-center pt-4'>
-          <button onClick={() => addToCart(product)} className='bg-green-400 hover:bg-blue-400 text-white font-semibold p-4 rounded-2xl cursor-pointer transition'>Add to cart</button>
           <button onClick={() =>
             {
             isFavorite(product) ? removeFromFavorites(product) :
              addToFavorites(product)}}
-             className={`flex items-center justify-center w-10 h-10 rounded-full shadow-lg transition-transform duration-300
+             className={`flex items-center justify-center w-10 h-10 rounded-full transition-transform duration-300
              ${isFavorite(product)
-              ? 'bg-red-500 text-white scale-110'
-              : 'bg-white text-gray-600 hover:bg-yellow-300 hover:text-white hover:scale-110'
+              ? 'text-white scale-110'
+              : ' text-gray-600'
              }`}>
               {isFavorite(product) ? '❤️' : '🤍'}
               </button>
