@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import SearchBar from './SearchBar'
 
 export default function Header() {
   const navigate = useNavigate()
@@ -13,6 +14,8 @@ export default function Header() {
        >
         Ecommerce website
         </h1>
+
+        <SearchBar />
       <ul className='flex gap-4 list-none'>
         <li className='flex items-center justify-center cursor-pointer bg-white rounded-full p-2 hover:scale-110 text-xl shadow transition-transform' onClick={() => {
           navigate('/')
