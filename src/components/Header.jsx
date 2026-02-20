@@ -5,7 +5,7 @@ export default function Header() {
   const navigate = useNavigate()
 
   return (
-  <header className='bg-gradient-to-r from-blue-400 to-blue-300 shadow-md fixed top-0 left-0 right-0 z-50'>
+  <header className='bg-stone-800 shadow-md fixed top-0 left-0 right-0 z-50'>
     <div className='max-w-6xl mx-auto flex items-center justify-between p-4'>
        <h1
         className='text-white text-2xl font-bold cursor-pointer'

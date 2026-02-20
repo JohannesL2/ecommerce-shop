@@ -31,14 +31,14 @@ export default function ShopItems() {
     <div className='pt-30'>
     <ul className='grid grid-cols-2 gap-4'>
         {products.map(product => (
-          <li key={product.id} className='bg-stone-400 p-4 rounded-lg'>
+          <li key={product.id} className='bg-stone-100 p-4 rounded-lg'>
           <img src={product.image} alt="" className='size-24 object-contain mx-auto'
           onClick={() => openDialog(product)}
           />
           <h3>{product.title}</h3>
           <p>${product.price}</p>
           <div className='relative flex gap-4 justify-center pt-4'>
-          <button onClick={() => addToCart(product)} className='bg-blue-300 hover:bg-blue-400 text-white font-semibold p-4 rounded-2xl cursor-pointer transition'>Add to cart</button>
+          <button onClick={() => addToCart(product)} className='bg-green-400 hover:bg-blue-400 text-white font-semibold p-4 rounded-2xl cursor-pointer transition'>Add to cart</button>
           <button onClick={() =>
             {
             isFavorite(product) ? removeFromFavorites(product) :
