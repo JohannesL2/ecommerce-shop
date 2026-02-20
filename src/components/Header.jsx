@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { AiOutlineShoppingCart, AiOutlineStar, AiOutlineHome } from 'react-icons/ai'
 import SearchBar from './SearchBar'
 
 export default function Header() {
@@ -7,28 +8,39 @@ export default function Header() {
 
   return (
   <header className='bg-stone-800 shadow-md fixed top-0 left-0 right-0 z-50'>
-    <div className='max-w-6xl mx-auto flex items-center justify-between p-4'>
+    <div className='max-w-6xl mx-auto flex items-center justify-between px-4 h-20 gap-4'>
        <h1
         className='text-white text-2xl font-bold cursor-pointer'
         onClick={() => navigate('/')}
        >
-        Ecommerce website
+        Fashion<span className='text-yellow-500'>.</span>Shop
         </h1>
-
-        <SearchBar />
-      <ul className='flex gap-4 list-none'>
-        <li className='flex items-center justify-center cursor-pointer bg-white rounded-full p-2 hover:scale-110 text-xl shadow transition-transform' onClick={() => {
-          navigate('/')
-        }}>🛍️</li>
         
-        <li className='flex items-center justify-center cursor-pointer bg-yellow-400 rounded-full p-2 hover:scale-110 text-xl shadow transition-transform' onClick={() => {
-          navigate('/favorites')
-        }}>⭐️</li>
+        <div className='hidden md:block flex-1 max-w-md mx-8'>
+        <SearchBar />
+        </div>
 
-        <li className='flex items-center justify-center cursor-pointer bg-white rounded-full p-2 hover:scale-110 text-xl shadow transition-transform' onClick={() => {
+    <nav>
+      <ul className='flex gap-4 items-center gap-2 md:gap-4 list-none'>
+        <li className='px-3 py-2 text-white hover:text-yellow-500 font-medium cursor-pointer transition-colors uppercase text-sm tracking-wide' onClick={() => {
+          navigate('/')
+        }}>
+          Home
+        </li>
+        
+        <li className='px-3 py-2 text-white hover:text-yellow-500 font-medium cursor-pointer transition-colors uppercase text-sm tracking-wide' onClick={() => {
+          navigate('/favorites')
+        }}>
+          Collections
+        </li>
+
+        <li className='p-2.5 text-yellow-500 hover:bg-stone-700 rounded-full cursor-pointer transition-all flex items-center justify-center' onClick={() => {
           navigate('/shoppingcart')
-        }}>🛒</li>
+        }}>
+          <AiOutlineShoppingCart size={24} />
+        </li>
       </ul>
+      </nav>
     </div>
     </header>
   )
